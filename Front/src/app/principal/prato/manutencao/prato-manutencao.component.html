@@ -1,0 +1,34 @@
+<div class="animated fadeIn">
+    <div class="p-xs-2 pl-xs-3 pr-xs-3">
+        <h3 class="mt-xs-0">Cadastro de Prato</h3>
+        <spinner *ngIf="loading"></spinner>
+        <div *ngIf="!loading" class="col-xs-12 p-xs-0 pt-xs-1" style="max-width: 600px">
+            <form #frm="ngForm" novalidate>
+                <div class="col-xs-12 form-group p-xs-0 mb-xs-1" [ngClass]="{'invalid': frmCtrls.restauranteId?.invalid && frm?.submitted, 'valid': !frmCtrls.restauranteId?.invalid && frm?.submitted}">
+                    <label>Restaurante</label>
+                    <select class="form-control" name="restauranteId" [(ngModel)]="prato.restauranteId" required autofocus>
+                        <option [value]="undefined" disabled>Restaurantes...</option>
+                        <option *ngFor="let res of restaurantes" [value]="res.id" [innerHtml]="res.nome"></option>
+                    </select>
+                    <ctrl-messages [hidden]="!frm?.submitted" [control]="frmCtrls.restauranteId"></ctrl-messages>
+                </div>
+                <div class="col-xs-12 form-group p-xs-0 mb-xs-1" [ngClass]="{'invalid': frmCtrls.nome?.invalid && frm?.submitted, 'valid': !frmCtrls.nome?.invalid && frm?.submitted}">
+                    <label>Prato</label>
+                    <input class="form-control" type="text" name="nome" [(ngModel)]="prato.nome" autocomplete="off" maxlength="80" required/>
+                    <ctrl-messages [hidden]="!frm?.submitted" [control]="frmCtrls.nome"></ctrl-messages>
+                </div>
+                <div class="col-xs-12 p-xs-0">
+                    <div class="col-xs-6 form-group p-xs-0 mb-xs-1" [ngClass]="{'invalid': frmCtrls.preco?.invalid && frm?.submitted, 'valid': !frmCtrls.preco?.invalid && frm?.submitted}">
+                        <label>Preço (R$)</label>
+                        <input class="form-control" type="number" name="preco" [(ngModel)]="prato.preco" min="0.00" max="999999.00" step="0.01" autocomplete="off" required/>
+                        <ctrl-messages [hidden]="!frm?.submitted" [control]="frmCtrls.preco"></ctrl-messages>
+                    </div>
+                    <div class="col-xs-6 p-xs-0 pt-xs-2 mt-xs-05 txt-right">
+                        <button type="button" class="btn btn-none gray-darker mr-xs-1" routerLink="/principal/prato/listar"><i class="material-icons md-18">undo</i> Voltar</button>
+                        <button type="submit" class="btn btn-primary" (click)="salvar()"><i class="material-icons md-18">save</i> Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

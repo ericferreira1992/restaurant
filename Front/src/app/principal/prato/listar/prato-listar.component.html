@@ -1,0 +1,44 @@
+<div class="animated fadeIn">
+    <div class="p-xs-2 pl-xs-3 pr-xs-3">
+        <h3 class="mt-xs-0">Pratos</h3>
+        
+        <spinner *ngIf="loading"></spinner>
+        
+        <div *ngIf="!loading" class="pt-xs-1">
+            <button class="btn btn-primary txt-center pl-xs-1 pr-xs-2" (click)="goManutencao(0)">
+                <i class="material-icons md-18">add</i> Cadastrar novo Prato
+            </button>
+            
+            <div class="table-scroll" style="max-width: 1000px">
+                <section [ngStyle]="{'height': (window.innerHeight - 203) + 'px'}">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th width="40px" class="pt-xs-05 pb-xs-0 pr-xs-0 txt-center"><i class="material-icons md-18 opct-4">remove</i>&nbsp;</th>
+                                <th width="40px" class="pt-xs-05 pb-xs-0 pr-xs-0 txt-center"><i class="material-icons md-18 opct-4">edit</i>&nbsp;</th>
+                                <th width="auto">Resturante</th>
+                                <th width="auto">Prato</th>
+                                <th width="150px">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let p of pratos | filter:filtro:g.semAcentos">
+                                <td width="40px" class="pt-xs-0 pb-xs-0 pr-xs-0"><button class="btn btn-round primary" (click)="excluir(p)"><i class="material-icons md-18" title="Excluir">remove</i></button></td>
+                                <td width="40px" class="pt-xs-0 pb-xs-0 pr-xs-0"><button class="btn btn-round blue" (click)="goManutencao(p.id)"><i class="material-icons md-18" title="Editar">edit</i></button></td>
+                                <td width="auto" [innerHtml]="p.restauranteId | restaurante:restaurantes"></td>
+                                <td width="auto" [innerHtml]="p.nome"></td>
+                                <td width="150px" [innerHtml]="p.preco | currency:'R$'"></td>
+                            </tr>
+                            <tr *ngIf="(pratos | filter:filtro:g.semAcentos).length == 0" class="bg-white">
+                                <td colspan="5" class="txt-center pt-xs-2 gray-darker">
+                                    <i class="material-icons d-inline-block va-middle">search</i> Nenhum prato encontrado
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

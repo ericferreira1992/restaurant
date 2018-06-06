@@ -1,0 +1,39 @@
+.btn {
+
+    &.btn-{
+        transition-duration: .3s;
+
+        &round{
+            height: 34px;
+            width: 34px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            padding: 5px;
+            color: $color-primary;
+            border: none;
+            text-align: center;
+
+            &:hover{
+                background-color: #FFF;
+            }
+
+            &-primary{
+                color: #FFF;
+                background-color: $color-primary;
+
+                &:hover{
+                    background-color: $color-primary;
+                }
+            }
+
+            &-secondary{
+                color: #FFF;
+                background-color: $color-secondary;
+
+                &:hover{
+                    background-color: $color-secondary;
+                }
+            }
+        }
+    }
+}

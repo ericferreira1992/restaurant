@@ -1,0 +1,19 @@
+<div class="animated fadeIn">
+    <div class="p-xs-2 pl-xs-3 pr-xs-3">
+        <h3 class="mt-xs-0">Cadastro de Restaurante</h3>
+        <spinner *ngIf="loading"></spinner>
+        <div *ngIf="!loading" class="col-xs-12 p-xs-0 pt-xs-1" style="max-width: 600px">
+            <form #frm="ngForm" novalidate>
+                <div class="col-xs-12 form-group p-xs-0 mb-xs-1" [ngClass]="{'invalid': frmCtrls.nome?.invalid && frm?.submitted, 'valid': !frmCtrls.nome?.invalid && frm?.submitted}">
+                    <label>Nome do restaurante</label>
+                    <input class="form-control" type="text" name="nome" [(ngModel)]="restaurante.nome" autocomplete="off" maxlength="80" required autofocus/>
+                    <ctrl-messages [hidden]="!frm?.submitted" [control]="frmCtrls.nome"></ctrl-messages>
+                </div>
+                <div class="col-xs-12 p-xs-0 txt-right">
+                    <button type="button" class="btn btn-none gray-darker mr-xs-1" routerLink="/principal/restaurante/listar"><i class="material-icons md-18">undo</i> Voltar</button>
+                    <button type="submit" class="btn btn-primary" (click)="salvar()"><i class="material-icons md-18">save</i> Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

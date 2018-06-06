@@ -1,0 +1,46 @@
+$color-primary: rgb(190,28,28);
+$color-primary-hover: #CD2222;
+
+$color-menu-line: rgb(206, 35, 35);
+
+$color-secondary: #AC0D0D;
+$color-secondary-hover: #C11414;
+
+$bg-color: #FFF;
+
+$color-blue: #0060C3;
+$color-green: #259C00;
+
+$color-success: #259C00;
+$color-danger: #CE4C4C;
+$color-info: #5bc0de;
+$color-warning: #f0ad4e;
+$gray-darkest: #373a3c;
+$gray-darker: #666666;
+$gray-dark: #999999;
+
+//Spinner
+@import './style/spinner';
+
+//Metarial-icons
+@import './style/material-icons';
+
+//Botões
+@import './style/botoes';
+@import './style/round-botoes';
+
+//Formulario
+@import './style/formulario';
+
+//Login
+@import './style/paginas/login';
+//Principal
+@import './style/paginas/principal';
+
+//Helpers
+@import './style/helper';
+@import './style/spacings';
+
+//Outros
+@import './style/table';
+@import './style/toast';

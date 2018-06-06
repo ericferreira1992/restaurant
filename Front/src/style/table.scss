@@ -1,0 +1,19 @@
+.table-scroll{
+    position:relative;
+
+    section{
+        height: 250px;
+        overflow: auto;  
+        margin-top: 37px;
+
+        .table {
+            thead{
+                position: absolute;  
+                top: -37px;
+                z-index: 2;
+                display: table;
+                width: 100%; 
+            }
+        }
+    }
+}

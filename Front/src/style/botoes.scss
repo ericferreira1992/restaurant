@@ -1,0 +1,56 @@
+.btn {
+    text-align: left;
+    height: 34px;
+    color: $color-primary;
+    background-color: #FAFAFA;
+    border: 1px #DDD solid;
+    &:hover, &:focus, &:active, &:visited{ outline: none !important; }
+
+    > i{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    &.btn-{
+        transition-duration: .3s;
+
+        &primary {
+            background-color: $color-primary;
+            border-color: $color-primary;
+            color: #FFF;
+            
+            &:hover, &:active, &:focus{
+                background-color: $color-primary-hover !important;
+                border-color: $color-primary-hover !important;
+                color: #FFF !important;
+                outline: none !important;
+            }
+        }
+
+        &secondary {
+            background-color: $color-secondary;
+            border-color: $color-secondary;
+            color: #FFF;
+
+            &:hover, &:active, &:focus{
+                background-color: $color-secondary-hover !important;
+                border-color: $color-secondary-hover !important;
+                color: #FFF !important;
+                outline: none !important;
+            }
+        }
+        &none {
+            color: $color-primary;
+            background: transparent;
+            border: none;
+
+            &:hover, &:active, &:focus{
+                color: $color-primary !important;
+                border-color: $color-primary !important;
+                background: transparent !important;
+                outline: none !important;
+            }
+        }
+    }
+}

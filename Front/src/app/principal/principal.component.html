@@ -1,0 +1,43 @@
+<div class="principal">
+    <div class="menu-lateral animated slideInLeft">
+        <section>
+            <div><img src="assets/img/logo_simples.png" alt="Restaurante" /></div>
+            <div class="menu">
+                <ul>
+                    <li routerLink="/principal/inicio">
+                        <i class="material-icons white">home</i>
+                        <label>Home</label>
+                    </li>
+                    <li routerLink="/principal/restaurante/listar">
+                        <i class="material-icons white">store</i>
+                        <label>Restaurantes</label>
+                    </li>
+                    <li routerLink="/principal/prato/listar">
+                        <i class="material-icons white">restaurant</i>
+                        <label>Pratos</label>
+                    </li>
+                    <li class="bottom opct-5">
+                        <img src="assets/img/cedro_icon.png" width="30" height="30">
+                        <small class="d-table m-auto p-xs-05 white">Cedro Technologies</small>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="conteudo">
+        <div class="header animated slideInDown">
+            <ul>
+                <li>
+                    <div class="user"></div>
+                    <label>Bem vindo, <span class="primary">{{sessionService.getUsuario().usuario}}</span></label>
+                </li>
+                <li (click)="logout()" class="f-right"><button class="btn btn-round" title="Sair"><i class="material-icons primary">exit_to_app</i></button></li>
+                <li (click)="sobre()" class="f-right"><button class="btn btn-round" title="Sobre"><i class="material-icons primary">info</i></button></li>
+            </ul>
+        </div>
+        <div class="area">
+            <spinner *ngIf="loading"></spinner>
+            <router-outlet *ngIf="!loading"></router-outlet>
+        </div>
+    </div>
+</div>

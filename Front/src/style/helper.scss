@@ -1,0 +1,101 @@
+.primary{ color: $color-primary !important; }
+.secondary{ color: $color-secondary !important; }
+.blue{ color: $color-blue !important; }
+.green{ color: $color-green !important; }
+.gray-darkest{ color: $gray-darkest !important; }
+.gray-darker{ color: $gray-darker !important; }
+.gray-dark{ color: $gray-dark !important; }
+
+.white{ color: white !important; }
+
+.danger{ color: $color-danger; }
+.success{ color: $color-success; }
+
+/* POSITIONS --------------------------------------------------------------------*/
+.pos-{
+    &absolute{ position: absolute !important; }
+    &fixed{ position: fixed !important; }
+    &inherit{ position: inherit !important; }
+    &relative{ position: relative !important; }
+    &static{ position: static !important; }
+    &initial{ position: initial !important; }
+}
+
+/* DISPLAY --------------------------------------------------------------------*/
+.dis-{
+    &inline{ display: inline !important; }
+    &table{ display: table !important; }
+    &inline-table{ display: inline-table !important; }
+    &table-cell{ display: table-cell !important; }
+    &block{ display: block !important; }
+    &inline-block{ display: inline-block !important; }
+    &inherit{ display: inherit !important; }
+    &none{ display: none !important; }
+}
+
+/* FLOAT --------------------------------------------------------------------*/
+.f-{
+    &left{ float: left !important; }
+    &right{ float: right !important; }
+    &none{ float: none !important; }
+}
+
+/* SIZE ----------------------------------------------------------------------*/
+.full-width { width: 100%; }
+
+/* TEXT ALIGN ----------------------------------------------------------------------*/
+.txt-{
+    &left { text-align: left }
+    &right { text-align: right }
+    &center { text-align: center }
+}
+
+/* BACKGROUND ----------------------------------------------------------------------*/
+.bg-{
+    &white { background-color: #FFF !important; }
+    &primary { background-color: $color-primary !important; }
+    &secondary { background-color: $color-secondary !important; }
+}
+
+/* OPACITY ----------------------------------------------------------------------*/
+.opct-{
+    &1 { opacity: .1 !important; }
+    &2 { opacity: .2 !important; }
+    &3 { opacity: .3 !important; }
+    &4 { opacity: .4 !important; }
+    &5 { opacity: .5 !important; }
+    &6 { opacity: .6 !important; }
+    &7 { opacity: .7 !important; }
+    &8 { opacity: .8 !important; }
+    &9 { opacity: .9 !important; }
+}
+
+/* DISPLAY -------------------------------------------------------------------*/
+.d-{
+    &inline-flex { display: inline-flex; }
+    &table { display: table; }
+    &table-cell { display: table-cell; }
+    &table-footer-group { display: table-footer-group; }
+}
+.va-{
+    &top{ vertical-align: top; }
+    &middle{ vertical-align: middle; }
+    &bottom{ vertical-align: bottom; }
+}
+.m-auto{ margin: auto }
+
+/* OUTROS --------------------------------------------------------------------*/
+.cursor-{
+    &text { cursor: text !important; }
+}
+
+.not-active {
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+.pointer, *[ng-click], *[ui-sref] {
+    cursor: pointer;
+}
+
+.upper { text-transform: uppercase; }

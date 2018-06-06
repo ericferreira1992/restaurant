@@ -1,0 +1,46 @@
+.login{
+    $color-primary: #C91B1B;
+    $color-primary-hover: #D02B2B;
+
+    $color-secondary: #960000;
+    $color-secondary-hover: #AE0303;
+
+    $bg-color: #A52626;
+
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $bg-color url(assets/img/bg_restaurant.jpg) repeat;
+    /*background: url(assets/img/bg_login.jpg) no-repeat center;
+    background-size: cover;*/
+
+    .login-area{
+        padding: 120px 15px 15px 15px;
+
+        section {
+            padding: 25px 30px 20px 30px;
+            background: #FFF;
+            border-radius: 5px;
+            box-shadow: 0 0 25px rgba(0,0,0,.35);
+            display: table;
+            margin: auto;
+            width: 100%;
+            max-width: 300px;
+
+            .logo{
+                display: table;
+                margin: auto;
+                margin-top: -85px;
+                padding-bottom: 10px;
+            }  
+
+            .form-group {
+                > i{
+                    color: #676767;
+                }
+            }        
+        }
+    }
+}

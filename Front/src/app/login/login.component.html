@@ -1,0 +1,32 @@
+<div class="login animated fadeIn">
+    <spinner *ngIf="loading" [white]="true" [padding]="'20px 0 0 0'"></spinner>
+    <div class="login-area">
+        <div *ngIf="!loading">
+            <div class="animated bounceInDown">
+                <section>
+                    <div class="logo">
+                        <img src="assets/img/logo.png" alt="Restaurante" />
+                    </div>
+                    <form novalidate name="frm" (ngSubmit)="enviar()">
+                        <div>
+                            <div class="form-group m-xs-0">
+                                <i class="material-icons">face</i>
+                                <input [(ngModel)]="usuario.login" name="login" autocomplete="off" maxlength="30" required placeholder="Usuário" class="form-control usuario" autofocus type="text"/>
+                            </div>
+                            <div class="form-group m-xs-0">
+                                <i class="material-icons">vpn_key</i>
+                                <input [(ngModel)]="usuario.senha" name="senha" autocomplete="off" maxlength="10" required placeholder="Senha" class="form-control senha" type="password"/>
+                            </div>
+    
+                            <button type="submit" class="btn btn-primary full-width txt-center mt-xs-05">ENTRAR</button>
+                        </div>
+                    </form>
+                </section>
+                <div class="d-table m-auto pt-xs-1 txt-center opct-7">
+                    <img src="assets/img/cedro_icon.png" width="19" height="19">
+                    <small class="pl-xs-05 white" style="padding-top: 1px">Cedro Technologies</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

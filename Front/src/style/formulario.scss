@@ -1,0 +1,123 @@
+.form-group {
+    margin-bottom: 1.2em;
+
+    > i{
+        padding: 7px 10px 7px 10px;
+        position: absolute;
+    }
+
+    > label{
+        margin-bottom: 1px;
+    }
+
+    input, select, textarea, div {
+        &.form-control {
+            background: #FFF;
+            border: #d0d0d0 1px solid;
+            box-sizing: border-box;
+            color: #888;
+            font-size: 15px;
+            height: 35px;
+            outline: none;
+            padding: 5px 7px;
+            width: 100%;
+            margin-bottom: 5px;
+
+            &.usuario, &.senha { padding: 1.3rem 1.3rem 1.3rem 43px; }
+
+            &.custom-typeahead{ padding:3px; }
+        }
+
+        &:focus { 
+            border-color: #BBB; 
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    textarea {
+        &.form-control {
+            min-height: 150px;
+            max-height: 150px;
+            resize: none;
+
+            &:focus { 
+                border-color: #BBB; 
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+
+    select {
+        cursor: pointer;
+        padding-right: 1px !important;
+
+        &.form-control {
+            &.filter {
+                background: rgba(0,0,0,0.4) !important;
+            }
+
+            option {
+                background: #fafafa;
+                color: #888;
+                cursor: pointer;
+                padding: 5px .8rem !important;
+                border: none;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+
+                &:disabled {
+                    color: gray;
+                }
+            }
+
+            &:focus { 
+                border-color: #BBB; 
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+    }
+
+    &.invalid {
+        input, select, textarea, div {
+            &.form-control {
+                border-color: $color-danger;
+                box-shadow: none;
+        
+                &:focus{ box-shadow: none; }
+            }
+        }
+    }
+
+    &.valid{ 
+        input, select, textarea, div {
+            &.form-control {
+                border-color: $color-success; 
+            }
+        }
+    }
+    
+    &.alert {
+        input, select, textarea, div {
+            &.form-control {
+                border-color: $color-warning;
+                box-shadow: none;
+
+                &:focus { box-shadow: none; }
+            }
+        }
+    }
+
+    &.disabled, &:disabled {
+        input, select, textarea, div {
+            &.form-control {
+                background-color: rgba(204,204,204,0.5) !important;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

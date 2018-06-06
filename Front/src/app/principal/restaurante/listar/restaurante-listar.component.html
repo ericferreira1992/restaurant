@@ -1,0 +1,49 @@
+<div class="animated fadeIn">
+    <div class="p-xs-2 pl-xs-3 pr-xs-3">
+        <h3 class="mt-xs-0">Restaurantes</h3>
+        <spinner *ngIf="loading"></spinner>
+        <div *ngIf="!loading" class="pt-xs-1">
+            <form #frm="ngForm" novalidate>
+                <div class="d-table full-width" style="max-width: 600px;">
+                    <div class="d-table-cell va-top form-group" style="width: 35px">
+                        <i class="material-icons primary">search</i>
+                    </div>
+                    <div class="d-table-cell va-top">
+                        <div class="col-xs-6 form-group mb-xs-0">
+                            <input class="form-control" type="text" name="nome" maxlength="80" placeholder="Pesquisar..." [(ngModel)]="filtro.nome" autocomplete="off" autofocus/>
+                        </div>
+                        <div class="col-xs-6 form-group mb-xs-0">
+                            <button class="btn btn-primary full-width txt-center pl-xs-05" (click)="goManutencao(0)"><i class="material-icons md-18">add</i> Cadastrar novo Restaurante</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+    
+            <div class="table-scroll" style="max-width: 1000px">
+                <section [ngStyle]="{'height': (window.innerHeight - 203) + 'px'}">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th width="40px" class="pt-xs-05 pb-xs-0 pr-xs-0 txt-center"><i class="material-icons md-18 opct-4">remove</i>&nbsp;</th>
+                                <th width="40px" class="pt-xs-05 pb-xs-0 pr-xs-0 txt-center"><i class="material-icons md-18 opct-4">edit</i>&nbsp;</th>
+                                <th>Resturante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let r of restaurantes | filter:filtro:g.semAcentos">
+                                <td width="40px" class="pt-xs-0 pb-xs-0 pr-xs-0"><button class="btn btn-round primary" (click)="excluir(r)"><i class="material-icons md-18" title="Excluir">remove</i></button></td>
+                                <td width="40px" class="pt-xs-0 pb-xs-0 pr-xs-0"><button class="btn btn-round blue" (click)="goManutencao(r.id)"><i class="material-icons md-18" title="Editar">edit</i></button></td>
+                                <td [innerHtml]="r.nome"></td>
+                            </tr>
+                            <tr *ngIf="(restaurantes | filter:filtro:g.semAcentos).length == 0" class="bg-white">
+                                <td colspan="3" class="txt-center pt-xs-2 gray-darker">
+                                    <i class="material-icons d-inline-block va-middle">search</i> Nenhum restaurante encontrado
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
